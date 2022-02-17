@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    background:  #181818;
+    color: #fff;
+    display: grid;
+  
+}
+
+textarea::-webkit-scrollbar,body::-webkit-scrollbar {
+    background: rgb(10, 77, 49);
+    border-radius: 4px;
+    width: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb {
+    background: rgb(20, 133, 26);
+    border-radius: 4px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+
+}
