@@ -1,0 +1,50 @@
+.about-for-my{
+    background-color: #021316;
+    padding: 3rem;
+    margin-top: .2rem;
+  
+}
+.baner{
+    width: 120px;
+    height: 120px;
+    border: 10px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-content: center;
+    float: left;
+    margin-right: 1rem;
+    margin-top: -7rem;
+    position: relative;
+}
+
+.baner img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  
+}
+
+
+p{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    margin-top: 2rem;
+    padding: 10px;
+    line-height: 1.5rem;
+}
+
+.text-my{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    margin-top: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    transition: all .5s;
+}
+.text-my:hover{
+    background-color: #042025;
+    box-shadow:  -3px 2px 15px 0px rgb(0 0 0 / 50%);
+}
+
+
