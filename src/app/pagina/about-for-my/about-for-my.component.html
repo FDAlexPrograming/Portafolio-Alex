@@ -1,23 +1,19 @@
 <section class="about-for-my">   
     <div class="baner">
-        <img src="assets/img/chimu2.jpeg" alt="">
+        <img [src]="about[0].img" alt="">
     </div>
 
-    <div>
+   
         <h1 class="titulo">Sobre mí</h1>
-        <div class="text-my">
-            <h1></h1>
+     
+    <div class="text-my">
+      
+    <p>Nombre : {{about[0].nombre}}</p>
+    <p>Titulo : {{ about[0].titulo}}</p>
+    <p>{{ about[0].resumenProfesional}}</p>
+
+    <input type="button" value="Eliminar" (click)="borrar(about[0].id)">
+ </div>   
            
 
-<article *ngFor="let item of cliente">
-    <p>{{item.id}}</p>
-    <p>{{item.user}}</p>
-    <p>{{item.password}}</p>
-    <p>{{item.direccion}}</p>
-</article>  
-           
-        </div>
-        
-    </div>
-</section>
   
