@@ -8,7 +8,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url = "/api/login";
+  url_login = "/api/login";
+  url_registro = "/api/register";
   currenUserSubject: BehaviorSubject<any>;
 
   constructor(private http:HttpClient) { 
@@ -18,12 +19,13 @@ export class AuthenticationService {
   }
 
   login(credenciales:any):Observable<any>{
-    return this.http.post(this.url,credenciales).pipe(map(user=>{
+    return this.http.post(this.url_login,credenciales).pipe(map(user=>{
       if(user){
         console.log(user);
         sessionStorage.setItem('currentUser',JSON.stringify(user));
+        localStorage.setItem('currentUser',JSON.stringify(user));
         this.currenUserSubject.next(user);
-
+        
       }
       return user;
     }));
@@ -33,4 +35,18 @@ export class AuthenticationService {
   get UsuarioAutenticado(){
     return this.currenUserSubject.value;
   }
+
+
+  Registro(credenciales:any):Observable<any>{
+    return this.http.post(this.url_registro,credenciales);
+
+
+  }
+
+  Logout() {
+    window.sessionStorage.clear();
+  }
+
+
+
 }

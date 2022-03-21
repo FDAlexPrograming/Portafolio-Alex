@@ -1,19 +1,18 @@
-<section class="about-for-my">   
-    <div class="baner">
-        <img [src]="about[0].img" alt="">
-    </div>
+ <section class="about-for-my">   
+     <div *ngFor="let items of about">
 
+        <div class="baner">
+            <img [src]="items.img">
+        </div>
+        <div class="text-my">
+        <p>Nombre : {{items.nombre}}</p>
+        <p>Titulo : {{ items.titulo}}</p>
+        <p>Profesion : {{ items.resumenProfesional}}</p>
+    
+        <button type="button" class="banerDelet btn" (click)="borrar(about[0].id)"><i class="fa-regular fa-trash-can"></i></button>
+     </div>
    
-        <h1 class="titulo">Sobre mí</h1>
-     
-    <div class="text-my">
-      
-    <p>Nombre : {{about[0].nombre}}</p>
-    <p>Titulo : {{ about[0].titulo}}</p>
-    <p>{{ about[0].resumenProfesional}}</p>
-
-    <input type="button" value="Eliminar" (click)="borrar(about[0].id)">
+  
  </div>   
-           
-
+            
   

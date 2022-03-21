@@ -1,98 +1,15 @@
-
-.input_login {
-    display: flex;
+.registrar{
+    width: 6rem;
     border: none;
-    margin-bottom: 1rem;
-    width: 200px;
-    padding: 7px;
-    text-align: center;
-    color: #000;
-    border: 3px solid ;
-    align-items: center;
+    border-radius: 0%;
 }
-
-.div_login{    
-    height: 9rem;
-   
+.registrar:hover{
+  color: #fff;
 }
-
-.form_login{
-    height: 14rem;
-    margin-bottom: 1rem;
-
-}
-
-.form_login:hover{
-    padding-top: 10px;
-  
-   
-   
-}
-
-.div_login,.form_login{
-    width: 25rem;
-    transition: all .5s ;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(27, 31, 31);
-    border-radius: 5px; 
-}
-
-.div_login:hover{
-    height: 20rem;
-    margin-top:100px ;
-}
-
-.form_login::placeholder,.form_register::placeholder{
-    color: #000;
-    font-size: 15px;
-}
-
-.login-submit,.logout {
-    border: 2px solid rgb(0, 0, 0);
-    background: transparent;
-    color: rgb(255, 255, 255);
-    height: 30px;
-    width: 70px;
-    transition: .1s background ease-in;
-}
-
-.form_login:focus{
-    background: rgb(161, 155, 155);
-    color: white;
-    border: none;
-}
-
-.login-submit:hover,.logout:hover {
-    background: rgb(0, 0, 0);
-    color: rgb(0, 253, 156);
-}
-
-header h4{
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-   
-}
-
-header section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 6rem;
-}
-
-span,.is-invalid,.text-danger{
-    color: rgb(167, 34, 34);
-   
+.error{
+    color: rgb(0, 0, 0);
+    margin: 0;
     font-weight: bold;
 }
-.is-valid{
-    color: green;
-}
 
-p{
-    margin-top: -.5rem; ;
-}
+

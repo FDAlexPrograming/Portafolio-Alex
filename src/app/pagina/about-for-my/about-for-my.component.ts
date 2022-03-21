@@ -19,10 +19,13 @@ export class AboutForMyComponent implements OnInit {
     this.getAbout();
   }
 
+
+
   getAbout():void{
     this.aboutService.getAbout().subscribe(data=>{
       this.about=data;
       console.log(this.about);
+     
     });
   }
   borrar(id:number){

@@ -9,36 +9,56 @@ import { AuthenticationService } from '../servicios/authentication.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  form:FormGroup;
+  formRegistro: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private authentication:AuthenticationService, private ruta:Router) {
-    this.form = this.formBuilder.group({
-     
-      nombreUsuario:['',Validators.required],
-      password:['',Validators.required],
+  constructor(private formBuilder: FormBuilder, private authentication: AuthenticationService, private ruta: Router) {
+
+    this.formRegistro = this.formBuilder.group({
+      nombre: ['', [Validators.required, Validators.minLength(3)]],
+      nombreUsuario: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
+      email: ['', [Validators.required, Validators.email]],
     });
+
+
   }
-   
+
 
   ngOnInit(): void {
   }
 
-  get username(){
-    return this.form.get('username');
+
+  get Nombre() {
+    return this.formRegistro.get('nombre');
   }
 
-  get password(){
-    return this.form.get('password');
+  get Email() {
+    return this.formRegistro.get('email');
+
   }
 
-  onSubmit(event:Event){
-    event.preventDefault();
-    console.log(this.form.value);
-    this.authentication.login(this.form.value).subscribe(data=>{
-     
-      this.ruta.navigate(['/porfolio']);
-    });
+  get NombreUsuario() {
+    return this.formRegistro.get('nombreUsuario');
   }
 
+  get PasswordRegistro() {
+    return this.formRegistro.get('password');
+  }
+ 
+
+  mensaje: string = "";
+  registroAndLogin() {
+    if (this.formRegistro.valid) {
+      this.authentication.Registro(this.formRegistro.value).subscribe(data => {
+        this.authentication.login(this.formRegistro.value).subscribe(data => {
+          this.ruta.navigate(['/porfolio']);
+        });
+      }, (err => {
+        this.mensaje = err.error.mensaje;
+      }));
+    }
+  }
 }
+
+
 

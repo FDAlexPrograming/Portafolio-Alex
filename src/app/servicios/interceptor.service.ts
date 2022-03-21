@@ -18,8 +18,8 @@ export class InterceptorService implements HttpInterceptor{
         setHeaders:{
           Authorization: `Bearer ${currentUser.token}`
         }
-
       });
+     
     }
     console.log("Interceptor corriendo" + JSON.stringify(req));
     return next.handle(req);
